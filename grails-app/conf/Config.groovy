@@ -93,23 +93,24 @@ log4j = {
 }
 
 // Added by the Spring Security Core plugin:
+import grails.plugins.springsecurity.SecurityConfigType
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.onb.registrationsystem.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.onb.registrationsystem.UserRole'
 grails.plugins.springsecurity.authority.className = 'com.onb.registrationsystem.Role'
 
 grails.plugins.springsecurity.securityConfigType = SecurityConfigType.InterceptUrlMap
-
 grails.plugins.springsecurity.interceptUrlMap = [
 	'/': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	"/image/**" : ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/image/**' : ['IS_AUTHENTICATED_ANONYMOUSLY'],
 	'/js': ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	"/css": ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	"/images/**": ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	"/login/**": ['IS_AUTHENTICATED_ANONYMOUSLY'],
-	"logout/**": ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/css': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'/login/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
+	'logout/**': ['IS_AUTHENTICATED_ANONYMOUSLY'],
 
-	"/**":	['ROLE_ADMIN'],
-	"/student/**":	['ROLE_USER'],
-	"/teacher/**":	['ROLE_ADMIN']
+	'/**':	['ROLE_ADMIN'],
+	'/student/**':	['ROLE_USER'],
+	'/teacher/**':	['ROLE_ADMIN']
 ]
+
+
 
