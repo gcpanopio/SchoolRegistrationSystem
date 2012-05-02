@@ -9,7 +9,7 @@ class BootStrap {
 	def adminUser = User.findByUsername('user') ?: new User(username: 'user', password: 'pass', enabled: true, accountExpired: false, accountLocked: false, passwordExpired: false).save()
 
 	if (!adminUser.getAuthorities().contains(adminRole)) {
-            UserRole.create(adminUser, adminRole)
+            UserRole.create adminUser, adminRole
         }
 
     }
