@@ -32,25 +32,62 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${studentInstance?.firstName}">
+				<g:if test="${studentInstance?.name.firstName}">
 				<li class="fieldcontain">
-					<span id="firstName-label" class="property-label"><g:message code="student.firstName.label" default="First Name" /></span>
+					<span id="firstName-label" class="property-label"><g:message code="student.name.firstName.label" default="First Name" /></span>
 					
-						<span class="property-value" aria-labelledby="firstName-label"><g:fieldValue bean="${studentInstance}" field="firstName"/></span>
+						<span class="property-value" aria-labelledby="firstName-label"><g:fieldValue bean="${studentInstance.name}" field="firstName"/></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${studentInstance?.lastName}">
+				<g:if test="${studentInstance?.name.lastName}">
 				<li class="fieldcontain">
-					<span id="lastName-label" class="property-label"><g:message code="student.lastName.label" default="Last Name" /></span>
+					<span id="lastName-label" class="property-label"><g:message code="student.name.lastName.label" default="Last Name" /></span>
 					
-						<span class="property-value" aria-labelledby="lastName-label"><g:fieldValue bean="${studentInstance}" field="lastName"/></span>
+						<span class="property-value" aria-labelledby="lastName-label"><g:fieldValue bean="${studentInstance.name}" field="lastName"/></span>
+					
+				</li>
+				</g:if>
+
+				<g:if test="${studentInstance?.level}">
+				<li class="fieldcontain">
+					<span id="level-label" class="property-label"><g:message code="student.level.label" default="Level" /></span>
+					
+						<span class="property-value" aria-labelledby="level-label"><g:fieldValue bean="${studentInstance}" field="level"/></span>
+					
+				</li>
+				</g:if>
+
+				<g:if test="${studentInstance?.registrationDate}">
+				<li class="fieldcontain">
+					<span id="registrationDate-label" class="property-label"><g:message code="student.registrationDate.label" default="Registration Date" /></span>
+					
+						<span class="property-value" aria-labelledby="registrationDate-label"><g:formatDate date="${studentInstance?.registrationDate}" /></span>
 					
 				</li>
 				</g:if>
 			
-				<g:if test="${studentInstance?.enrollments}">
+
+				<g:if test="${studentInstance?.username}">
+				<li class="fieldcontain">
+					<span id="username-label" class="property-label"><g:message code="student.username.label" default="Username" /></span>
+					
+						<span class="property-value" aria-labelledby="username-label"><g:fieldValue bean="${studentInstance}" field="username"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${studentInstance?.password}">
+				<li class="fieldcontain">
+					<span id="password-label" class="property-label"><g:message code="student.password.label" default="Password" /></span>
+					
+						<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${studentInstance}" field="password"/></span>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${studentInstance?.enrollment}">
 
 				<li class="fieldcontain">
 					<span id="password-label" class="property-label"><g:message code="student.password.label" default="Password" /></span>
@@ -83,16 +120,6 @@
 					<span id="enabled-label" class="property-label"><g:message code="student.enabled.label" default="Enabled" /></span>
 					
 						<span class="property-value" aria-labelledby="enabled-label"><g:formatBoolean boolean="${studentInstance?.enabled}" /></span>
-					
-				</li>
-				</g:if>
-			
-			
-				<g:if test="${studentInstance?.name}">
-				<li class="fieldcontain">
-					<span id="name-label" class="property-label"><g:message code="student.name.label" default="Name" /></span>
-					
-						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${studentInstance}" field="name"/></span>
 					
 				</li>
 				</g:if>

@@ -3,7 +3,6 @@ package com.onb.registrationsystem
 import org.springframework.dao.DataIntegrityViolationException
 
 class StudentController {
-	def springSecurityService
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
@@ -22,17 +21,11 @@ class StudentController {
 
     def save() {
         def studentInstance = new Student(params)
-	println params.password
+	studentInstance.name = new Name(params)
         if (!studentInstance.save(flush: true)) {
             render(view: "create", model: [studentInstance: studentInstance])
             return
         }
-	else{
-		def role = Role.findByAuthority('ROLE_USER')
-		def userRole = new UserRole()
-		
-		userRole.create(studentInstance, role, true)
-	}
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'student.label', default: 'Student'), studentInstance.id])
         redirect(action: "show", id: studentInstance.id)
