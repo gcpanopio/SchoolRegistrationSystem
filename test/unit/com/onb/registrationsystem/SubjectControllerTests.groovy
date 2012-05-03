@@ -12,8 +12,11 @@ class SubjectControllerTests {
 
     def populateValidParams(params) {
       assert params != null
-      // TODO: Populate valid properties like...
+
+      // DONE: Populate valid properties like...
       //params["name"] = 'someValidName'
+	params["name"] = "Eng5"
+	params["fee"] = new BigDecimal("100.00")
     }
 
     void testIndex() {
@@ -105,7 +108,10 @@ class SubjectControllerTests {
 
         // test invalid parameters in update
         params.id = subject.id
+
         //TODO: add invalid values to params object
+	params["name"] = true
+	params["fee"] = true
 
         controller.update()
 
