@@ -3,7 +3,6 @@ package com.onb.registrationsystem
 
 
 import org.junit.*
-import java.util.Date
 import grails.test.mixin.*
 
 @TestFor(StudentController)
@@ -13,11 +12,8 @@ class StudentControllerTests {
 
     def populateValidParams(params) {
       assert params != null
-      params["studentNumber"] = "3"
-      params["firstName"] = "Girah"
-      params["lastName"] = "Panopio"
-      params["level"] = 3
-      params["registrationDate"] = new Date(2012, 5, 2)
+      // TODO: Populate valid properties like...
+      //params["name"] = 'someValidName'
     }
 
     void testIndex() {
@@ -109,10 +105,6 @@ class StudentControllerTests {
 
         // test invalid parameters in update
         params.id = student.id
-	params.firstName = 1
-	params.lastName = 1
-	params.level = "3"
-	params.registrationDate = 6
         //TODO: add invalid values to params object
 
         controller.update()

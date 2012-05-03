@@ -6,6 +6,7 @@ public class StudentClass {
 	Teacher teacher
 	Room room
 	Timeslot timeslot
+	static embedded = ['subject', 'teacher', 'room', 'timeslot' ]
 	
 	static constraints = {
 		subject nullable:false, blank:false

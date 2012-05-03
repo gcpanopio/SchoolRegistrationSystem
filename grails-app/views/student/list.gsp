@@ -24,15 +24,17 @@
 				<thead>
 					<tr>
 					
+						<g:sortableColumn property="username" title="${message(code: 'student.username.label', default: 'Username')}" />
+					
+						<g:sortableColumn property="password" title="${message(code: 'student.password.label', default: 'Password')}" />
+					
 						<g:sortableColumn property="studentNumber" title="${message(code: 'student.studentNumber.label', default: 'Student Number')}" />
 					
 						<g:sortableColumn property="firstName" title="${message(code: 'student.firstName.label', default: 'First Name')}" />
 					
 						<g:sortableColumn property="lastName" title="${message(code: 'student.lastName.label', default: 'Last Name')}" />
 					
-						<g:sortableColumn property="level" title="${message(code: 'student.level.label', default: 'Level')}" />
-					
-						<g:sortableColumn property="registrationDate" title="${message(code: 'student.registrationDate.label', default: 'Registration Date')}" />
+						<g:sortableColumn property="accountExpired" title="${message(code: 'student.accountExpired.label', default: 'Account Expired')}" />
 					
 					</tr>
 				</thead>
@@ -40,15 +42,17 @@
 				<g:each in="${studentInstanceList}" status="i" var="studentInstance">
 					<tr class="${(i % 2) == 0 ? 'even' : 'odd'}">
 					
-						<td><g:link action="show" id="${studentInstance.id}">${fieldValue(bean: studentInstance, field: "studentNumber")}</g:link></td>
+						<td><g:link action="show" id="${studentInstance.id}">${fieldValue(bean: studentInstance, field: "username")}</g:link></td>
+					
+						<td>${fieldValue(bean: studentInstance, field: "password")}</td>
+					
+						<td>${fieldValue(bean: studentInstance, field: "studentNumber")}</td>
 					
 						<td>${fieldValue(bean: studentInstance, field: "firstName")}</td>
 					
 						<td>${fieldValue(bean: studentInstance, field: "lastName")}</td>
 					
-						<td>${fieldValue(bean: studentInstance, field: "level")}</td>
-					
-						<td><g:formatDate date="${studentInstance.registrationDate}" /></td>
+						<td><g:formatBoolean boolean="${studentInstance.accountExpired}" /></td>
 					
 					</tr>
 				</g:each>

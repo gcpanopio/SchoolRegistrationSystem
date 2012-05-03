@@ -26,6 +26,14 @@
 	<g:field type="number" name="totalFee" required="" value="${fieldValue(bean: enrollmentInstance, field: 'totalFee')}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: enrollmentInstance, field: 'classes', 'error')} ">
+	<label for="classes">
+		<g:message code="enrollment.classes.label" default="Classes" />
+		
+	</label>
+	<g:select name="classes" from="${com.onb.registrationsystem.StudentClass.list()}" multiple="multiple" optionKey="id" size="5" value="${enrollmentInstance?.classes*.id}" class="many-to-many"/>
+</div>
+
 <div class="fieldcontain ${hasErrors(bean: enrollmentInstance, field: 'enrollmentDate', 'error')} required">
 	<label for="enrollmentDate">
 		<g:message code="enrollment.enrollmentDate.label" default="Enrollment Date" />

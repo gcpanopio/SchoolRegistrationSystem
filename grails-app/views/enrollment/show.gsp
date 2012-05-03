@@ -50,6 +50,17 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${enrollmentInstance?.classes}">
+				<li class="fieldcontain">
+					<span id="classes-label" class="property-label"><g:message code="enrollment.classes.label" default="Classes" /></span>
+					
+						<g:each in="${enrollmentInstance.classes}" var="c">
+						<span class="property-value" aria-labelledby="classes-label"><g:link controller="studentClass" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 				<g:if test="${enrollmentInstance?.enrollmentDate}">
 				<li class="fieldcontain">
 					<span id="enrollmentDate-label" class="property-label"><g:message code="enrollment.enrollmentDate.label" default="Enrollment Date" /></span>
