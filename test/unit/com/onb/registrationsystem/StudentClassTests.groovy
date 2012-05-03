@@ -11,7 +11,15 @@ import org.junit.*
 @TestFor(StudentClass)
 class StudentClassTests {
 
-    void testSomething() {
-       fail "Implement me"
+int maxStudents = 30
+	Subject subject
+	Teacher teacher
+	Room room
+	Timeslot timeslot
+
+    void testDefaultValueOfMaxStudents() {
+       def studentclass = new StudentClass()
+	assert 30 == studentclass.maxStudents
+	assertFalse "Null fields for student class", studentclass.validate();
     }
 }

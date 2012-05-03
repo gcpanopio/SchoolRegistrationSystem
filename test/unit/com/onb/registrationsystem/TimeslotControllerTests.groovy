@@ -12,6 +12,7 @@ import org.junit.*
 class TimeslotControllerTests {
 
     void testSomething() {
-       fail "Implement me"
+	// there are no controller method to test
+       //fail "Implement me"
     }
 }

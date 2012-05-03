@@ -11,7 +11,15 @@ import org.junit.*
 @TestFor(Enrollment)
 class EnrollmentTests {
 
-    void testSomething() {
-       fail "Implement me"
+  
+	void testFieldsAfterInstanceCreation() {
+	def enrollment = new Enrollment(schoolYear:3, semester:"1st", totalFee:new BigDecimal("100.00"))
+	assert 3 == enrollment.schoolYear
+	assert "1st" == enrollment.semester
+	assertEquals(new BigDecimal("100.00"), enrollment.totalFee)
     }
+
+	
+
+
 }
