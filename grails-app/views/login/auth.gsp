@@ -57,7 +57,7 @@
 	}
 
 	#login #remember_me_holder {
-		padding-left: 120px;
+		padding-left: 100px;
 	}
 
 	#login #submit {
@@ -105,7 +105,6 @@
 				<label for='password'><g:message code="springSecurity.login.password.label"/>:</label>
 				<input type='password' class='text_' name='j_password' id='password'/>
 			</p>
-			<p>  <g:link controller="user" action="register">Register</g:link> </p>
 			<p id="remember_me_holder">
 				<input type='checkbox' class='chk' name='${rememberMeParameter}' id='remember_me' <g:if test='${hasCookie}'>checked='checked'</g:if>/>
 				<label for='remember_me'><g:message code="springSecurity.login.remember.me.label"/></label>
