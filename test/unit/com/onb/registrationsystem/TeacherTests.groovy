@@ -11,7 +11,9 @@ import org.junit.*
 @TestFor(Teacher)
 class TeacherTests {
 
-    void testSomething() {
-
+    void testFieldsAfterInstantiation() {
+	def tony = new Name(firstName:"Tony", lastName:"Gigahertz")
+	def teacher = new Teacher(name:tony)
+	assertEquals(tony, teacher.name)
     }
 }

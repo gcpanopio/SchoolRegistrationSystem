@@ -14,10 +14,10 @@ class EnrollmentControllerTests {
       assert params != null
       // DONE: Populate valid properties like...
       //params["name"] = 'someValidName'
-	params["enrollmentDate"] = new Date(2012, 3, 3)
-	params["schoolYear"] = 3;
-	params["semester"] = "2nd"
-	params["totalFee"] = new BigDecimal("100.00");
+	params.enrollmentDate = new Date()
+	params.schoolYear = 3
+	params.semester = "2nd"
+	params.totalFee = new BigDecimal("100.00")
 
     }
 
@@ -113,10 +113,10 @@ class EnrollmentControllerTests {
 
 
         //DONE: add invalid values to params object
-	params["enrollmentDate"] = "Hello World"
-	params["schoolYear"] = "school year"
-	params["semester"] = 0L
-	params["totalFee"] = "Hello World"
+	params.enrollmentDate = "Hello World"
+	params.schoolYear = "school year"
+	params.semester = 0L
+	params.totalFee = "Hello World"
 
 
         controller.update()

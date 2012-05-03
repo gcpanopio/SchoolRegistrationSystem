@@ -12,8 +12,16 @@ class UserRoleControllerTests {
 
     def populateValidParams(params) {
       assert params != null
-     	params.user = new User()
-	params.role = new Role()
+	def user = new User()
+  	user.username = "user"
+	user.password = "password"
+	user.enabled = true
+	user.accountExpired = false
+	user.accountLocked = false
+	user.passwordExpired = false
+
+     	params.user = user
+	params.role = new Role(authority:"ROLE_MODEL")
     }
 
     void testIndex() {
