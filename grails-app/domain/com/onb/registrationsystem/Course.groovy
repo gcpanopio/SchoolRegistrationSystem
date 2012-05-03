@@ -14,5 +14,9 @@ class Course {
 	static mapping = {
 		subjects joinTable: false, column : 'Course_ID', lazy : false	
 	}
+
+	def toString = {
+		"${name}"
+	}
 }
 

@@ -27,7 +27,7 @@
 				<li class="fieldcontain">
 					<span id="subject-label" class="property-label"><g:message code="studentClass.subject.label" default="Subject" /></span>
 					
-						<span class="property-value" aria-labelledby="subject-label"><g:fieldValue bean="${studentClassInstance}" field="subject"/></span>
+						<span class="property-value" aria-labelledby="subject-label"><g:link controller="subject" action="show" id="${studentClassInstance?.subject?.id}">${studentClassInstance?.subject?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -36,7 +36,7 @@
 				<li class="fieldcontain">
 					<span id="teacher-label" class="property-label"><g:message code="studentClass.teacher.label" default="Teacher" /></span>
 					
-						<span class="property-value" aria-labelledby="teacher-label"><g:fieldValue bean="${studentClassInstance}" field="teacher"/></span>
+						<span class="property-value" aria-labelledby="teacher-label"><g:link controller="teacher" action="show" id="${studentClassInstance?.teacher?.id}">${studentClassInstance?.teacher?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -45,7 +45,7 @@
 				<li class="fieldcontain">
 					<span id="room-label" class="property-label"><g:message code="studentClass.room.label" default="Room" /></span>
 					
-						<span class="property-value" aria-labelledby="room-label"><g:fieldValue bean="${studentClassInstance}" field="room"/></span>
+						<span class="property-value" aria-labelledby="room-label"><g:link controller="room" action="show" id="${studentClassInstance?.room?.id}">${studentClassInstance?.room?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>
@@ -54,7 +54,7 @@
 				<li class="fieldcontain">
 					<span id="timeslot-label" class="property-label"><g:message code="studentClass.timeslot.label" default="Timeslot" /></span>
 					
-						<span class="property-value" aria-labelledby="timeslot-label"><g:fieldValue bean="${studentClassInstance}" field="timeslot"/></span>
+						<span class="property-value" aria-labelledby="timeslot-label"><g:link controller="timeslot" action="show" id="${studentClassInstance?.timeslot?.id}">${studentClassInstance?.timeslot?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

@@ -14,4 +14,10 @@ class Student extends User{
 	lastName nullable:false, blank:false
 	enrollments nullable: true, blank: true
     }
+
+	def toString = {
+		"${studentNumber} ${lastName} ${firstName}"
+	}
 }
+
+

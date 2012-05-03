@@ -5,13 +5,18 @@ class Enrollment {
 	int schoolYear
 	String semester
 	BigDecimal totalFee
-	static hasMany = [ class: StudentClass]
+	static belongsTo = Student
+	static hasMany = [ classes: StudentClass]
 	
 	static constraints = {
 		schoolYear nullable:false, blank:false
 		semester nullable:false, blank:false
 		totalFee nullable:false, blank:false
-		class nullable:true, blank:true
+		classes nullable:true, blank:true
+	}
+
+	def toString = {
+		"${schoolYear} - ${semester}"
 	}
 }
 

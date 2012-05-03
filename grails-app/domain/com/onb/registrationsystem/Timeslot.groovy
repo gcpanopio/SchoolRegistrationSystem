@@ -10,4 +10,8 @@ class Timeslot {
 		start nullable:false, blank:false
 		end nullable:false, blank:false
 	}
+
+	def toString = {
+		"${day} ${start} - ${end}"
+	}
 }
