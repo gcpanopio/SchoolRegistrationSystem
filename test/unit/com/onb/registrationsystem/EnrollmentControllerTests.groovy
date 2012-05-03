@@ -12,8 +12,13 @@ class EnrollmentControllerTests {
 
     def populateValidParams(params) {
       assert params != null
-      // TODO: Populate valid properties like...
+      // DONE: Populate valid properties like...
       //params["name"] = 'someValidName'
+	params["enrollmentDate"] = new Date(2012, 3, 3)
+	params["schoolYear"] = 3;
+	params["semester"] = "2nd"
+	params["totalFee"] = new BigDecimal("100.00");
+
     }
 
     void testIndex() {
@@ -105,7 +110,14 @@ class EnrollmentControllerTests {
 
         // test invalid parameters in update
         params.id = enrollment.id
-        //TODO: add invalid values to params object
+
+
+        //DONE: add invalid values to params object
+	params["enrollmentDate"] = "Hello World"
+	params["schoolYear"] = "school year"
+	params["semester"] = 0L
+	params["totalFee"] = "Hello World"
+
 
         controller.update()
 
