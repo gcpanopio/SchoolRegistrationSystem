@@ -2,7 +2,7 @@ import com.onb.registrationsystem.*;
 
 class BootStrap {
 
-	def springSecurityService
+def springSecurityService
     def init = { servletContext ->
 	def userRole = Role.findByAuthority('ROLE_USER') ?: new Role(authority: 'ROLE_USER').save()
 
@@ -12,6 +12,12 @@ class BootStrap {
 
 	if (!adminUser.getAuthorities().contains(adminRole)) {
             UserRole.create(adminUser, adminRole)
+        }
+
+	def userUser = User.findByUsername('student') ?: new User(username: 'student', password: 'pass', enabled: true, accountExpired: false, accountLocked: false, passwordExpired: false).save()
+
+	if (!userUser.getAuthorities().contains(userRole)) {
+            UserRole.create(userUser, userRole)
         }
 
     }
