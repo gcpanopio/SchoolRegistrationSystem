@@ -68,13 +68,11 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${studentInstance?.enrollments}">
+				<g:if test="${studentInstance?.enrollment}">
 				<li class="fieldcontain">
-					<span id="enrollments-label" class="property-label"><g:message code="student.enrollments.label" default="Enrollments" /></span>
+					<span id="enrollment-label" class="property-label"><g:message code="student.enrollment.label" default="Enrollment" /></span>
 					
-						<g:each in="${studentInstance.enrollments}" var="e">
-						<span class="property-value" aria-labelledby="enrollments-label"><g:link controller="enrollment" action="show" id="${e.id}">${e?.encodeAsHTML()}</g:link></span>
-						</g:each>
+						<span class="property-value" aria-labelledby="enrollment-label"><g:link controller="enrollment" action="show" id="${studentInstance?.enrollment?.id}">${studentInstance?.enrollment?.encodeAsHTML()}</g:link></span>
 					
 				</li>
 				</g:if>

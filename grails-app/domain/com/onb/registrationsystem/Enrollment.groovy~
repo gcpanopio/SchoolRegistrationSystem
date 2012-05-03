@@ -15,7 +15,7 @@ class Enrollment {
 		classes nullable:true, blank:true
 	}
 
-	def toString = {
+	public String toString = {
 		"${schoolYear} - ${semester}"
 	}
 }

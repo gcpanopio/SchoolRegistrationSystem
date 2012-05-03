@@ -25,6 +25,15 @@
 	<g:textField name="lastName" required="" value="${studentInstance?.lastName}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'enrollment', 'error')} ">
+	<label for="enrollment">
+		<g:message code="student.enrollment.label" default="Enrollment" />
+		
+	</label>
+	<g:select id="enrollment" name="enrollment.id" from="${com.onb.registrationsystem.Enrollment.list()}" optionKey="id" value="${studentInstance?.enrollment?.id}" class="many-to-one" noSelection="['null': '']"/>
+</div>
+
+
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'level', 'error')} required">
 	<label for="level">
 		<g:message code="student.level.label" default="Level" />
@@ -33,6 +42,13 @@
 	<g:field type="number" name="level" required="" value="${fieldValue(bean: studentInstance, field: 'level')}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'registrationDate', 'error')} required">
+	<label for="registrationDate">
+		<g:message code="student.registrationDate.label" default="Registration Date" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:datePicker name="registrationDate" precision="day"  value="${studentInstance?.registrationDate}"  />
+</div>
 
 <label>
 	<br><br>

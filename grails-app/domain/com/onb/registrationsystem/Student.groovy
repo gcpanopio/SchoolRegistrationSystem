@@ -6,16 +6,16 @@ class Student extends User{
 	String lastName
 	int level
 	Date registrationDate
-	static hasMany = [enrollments : Enrollment]
+	static hasOne = [enrollment : Enrollment]
 
     static constraints = {
 	studentNumber nullable:false, blank:false, size:1..10, unique:true
 	firstName nullable:false, blank:false
 	lastName nullable:false, blank:false
-	enrollments nullable: true, blank: true
+	enrollment nullable: true, blank: true
     }
 
-	def toString = {
+	public String toString = {
 		"${studentNumber} ${lastName} ${firstName}"
 	}
 }
