@@ -15,7 +15,7 @@ class Course {
 		subjects joinTable: false, column : 'Course_ID', lazy : false	
 	}
 
-	def toString = {
+	public String toString() {
 		"${name}"
 	}
 }

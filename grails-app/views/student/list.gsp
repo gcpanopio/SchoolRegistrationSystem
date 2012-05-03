@@ -24,8 +24,6 @@
 				<thead>
 					<tr>
 					
-						
-					
 						<g:sortableColumn property="studentNumber" title="${message(code: 'student.studentNumber.label', default: 'Student Number')}" />
 					
 						<g:sortableColumn property="firstName" title="${message(code: 'student.firstName.label', default: 'First Name')}" />
@@ -42,7 +40,6 @@
 					
 						<td><g:link action="show" id="${studentInstance.id}">${fieldValue(bean: studentInstance, field: "studentNumber")}</g:link></td>
 					
-						
 					
 						<td>${fieldValue(bean: studentInstance, field: "firstName")}</td>
 					

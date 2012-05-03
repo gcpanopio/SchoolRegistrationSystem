@@ -9,7 +9,7 @@ class Room {
 		building nullable:false, blank:false
 	}
 
-	def toString = {
+	public String toString() {
 		"${building} ${roomNumber}"
 	}
 }

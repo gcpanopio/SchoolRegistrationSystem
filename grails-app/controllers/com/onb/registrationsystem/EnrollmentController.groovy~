@@ -20,7 +20,6 @@ class EnrollmentController {
     }
 
     def save() {
-	params.enrollmentDate = new Date()
         def enrollmentInstance = new Enrollment(params)
         if (!enrollmentInstance.save(flush: true)) {
             render(view: "create", model: [enrollmentInstance: enrollmentInstance])

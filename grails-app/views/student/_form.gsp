@@ -1,6 +1,5 @@
 <%@ page import="com.onb.registrationsystem.Student" %>
 
-
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'studentNumber', 'error')} required">
 	<label for="studentNumber">
 		<g:message code="student.studentNumber.label" default="Student Number" />
@@ -32,7 +31,6 @@
 	</label>
 	<g:field type="number" name="level" required="" value="${fieldValue(bean: studentInstance, field: 'level')}"/>
 </div>
-
 
 <label>
 	<br><br>
@@ -78,8 +76,6 @@
 	</label>
 	<g:checkBox name="enabled" value="${studentInstance?.enabled}" />
 </div>
-
-
 
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'passwordExpired', 'error')} ">
 	<label for="passwordExpired">

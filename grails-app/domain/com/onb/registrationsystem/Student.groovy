@@ -15,7 +15,7 @@ class Student extends User{
 	enrollment nullable: true, blank: true
     }
 
-	public String toString = {
+	public String toString() {
 		"${studentNumber} ${lastName} ${firstName}"
 	}
 }
