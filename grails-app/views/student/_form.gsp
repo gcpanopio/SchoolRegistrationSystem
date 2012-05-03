@@ -1,5 +1,25 @@
 <%@ page import="com.onb.registrationsystem.Student" %>
 
+
+<fieldset class="embedded"><legend><g:message code="student.name.label" default="Name" /></legend>
+<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'name.firstName', 'error')} required">
+	<label for="name.firstName">
+		<g:message code="student.name.firstName.label" default="First Name" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="firstName" required="" value="${nameInstance?.firstName}"/>
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'name.lastName', 'error')} required">
+	<label for="name.lastName">
+		<g:message code="student.name.lastName.label" default="Last Name" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="lastName" required="" value="${nameInstance?.lastName}"/>
+</div>
+
+</fieldset>
+
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'studentNumber', 'error')} required">
 	<label for="studentNumber">
 		<g:message code="student.studentNumber.label" default="Student Number" />
@@ -7,6 +27,18 @@
 	</label>
 	<g:textField name="studentNumber" maxlength="10" required="" value="${studentInstance?.studentNumber}"/>
 </div>
+
+<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'level', 'error')} required">
+	<label for="level">
+		<g:message code="student.level.label" default="Level" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:field type="number" name="level" required="" value="${fieldValue(bean: studentInstance, field: 'level')}"/>
+</div>
+
+<label>
+	<br><br>
+</label>
 
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'username', 'error')} required">
 	<label for="username">
@@ -47,32 +79,6 @@
 	</label>
 	<g:checkBox name="enabled" value="${studentInstance?.enabled}" />
 </div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'level', 'error')} required">
-	<label for="level">
-		<g:message code="student.level.label" default="Level" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field type="number" name="level" required="" value="${fieldValue(bean: studentInstance, field: 'level')}"/>
-</div>
-<fieldset class="embedded"><legend><g:message code="student.name.label" default="Name" /></legend>
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'name.firstName', 'error')} required">
-	<label for="name.firstName">
-		<g:message code="student.name.firstName.label" default="First Name" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="firstName" required="" value="${nameInstance?.firstName}"/>
-</div>
-
-<div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'name.lastName', 'error')} required">
-	<label for="name.lastName">
-		<g:message code="student.name.lastName.label" default="Last Name" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:textField name="lastName" required="" value="${nameInstance?.lastName}"/>
-</div>
-
-</fieldset>
 
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'passwordExpired', 'error')} ">
 	<label for="passwordExpired">
