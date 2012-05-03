@@ -20,6 +20,7 @@ class TeacherController {
     }
 
     def save() {
+	println params
         def teacherInstance = new Teacher()
 	teacherInstance.name = new Name(params)
         if (!teacherInstance.save(flush: true)) {

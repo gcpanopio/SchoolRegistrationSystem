@@ -5,7 +5,11 @@ class Enrollment {
 	int schoolYear
 	String semester
 	BigDecimal totalFee
+<<<<<<< Updated upstream
+	static belongsTo = [student : Student]
+=======
 	static belongsTo = Student
+>>>>>>> Stashed changes
 	static hasMany = [ classes: StudentClass]
 	
 	static constraints = {

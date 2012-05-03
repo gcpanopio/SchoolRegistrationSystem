@@ -50,45 +50,8 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${studentInstance?.enrollment}">
-				<li class="fieldcontain">
-					<span id="enrollment-label" class="property-label"><g:message code="student.enrollment.label" default="Enrollment" /></span>
-					
-						<span class="property-value" aria-labelledby="enrollment-label"><g:link controller="enrollment" action="show" id="${studentInstance?.enrollment?.id}">${studentInstance?.enrollment?.encodeAsHTML()}</g:link></span>
-					
-				</li>
-				</g:if>
+				<g:if test="${studentInstance?.enrollments}">
 
-				
-				<g:if test="${studentInstance?.level}">
-				<li class="fieldcontain">
-					<span id="level-label" class="property-label"><g:message code="student.level.label" default="Level" /></span>
-					
-						<span class="property-value" aria-labelledby="level-label"><g:fieldValue bean="${studentInstance}" field="level"/></span>
-					
-				</li>
-				</g:if>
-
-				<g:if test="${studentInstance?.registrationDate}">
-				<li class="fieldcontain">
-					<span id="registrationDate-label" class="property-label"><g:message code="student.registrationDate.label" default="Registration Date" /></span>
-					
-						<span class="property-value" aria-labelledby="registrationDate-label"><g:formatDate date="${studentInstance?.registrationDate}" /></span>
-					
-				</li>
-				</g:if>
-			
-
-				<g:if test="${studentInstance?.username}">
-				<li class="fieldcontain">
-					<span id="username-label" class="property-label"><g:message code="student.username.label" default="Username" /></span>
-					
-						<span class="property-value" aria-labelledby="username-label"><g:fieldValue bean="${studentInstance}" field="username"/></span>
-					
-				</li>
-				</g:if>
-			
-				<g:if test="${studentInstance?.password}">
 				<li class="fieldcontain">
 					<span id="password-label" class="property-label"><g:message code="student.password.label" default="Password" /></span>
 					
@@ -124,6 +87,15 @@
 				</li>
 				</g:if>
 			
+			
+				<g:if test="${studentInstance?.name}">
+				<li class="fieldcontain">
+					<span id="name-label" class="property-label"><g:message code="student.name.label" default="Name" /></span>
+					
+						<span class="property-value" aria-labelledby="name-label"><g:fieldValue bean="${studentInstance}" field="name"/></span>
+					
+				</li>
+				</g:if>
 			
 				<g:if test="${studentInstance?.passwordExpired}">
 				<li class="fieldcontain">

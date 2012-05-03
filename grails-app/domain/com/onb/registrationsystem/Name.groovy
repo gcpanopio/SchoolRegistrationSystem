@@ -1,15 +1,16 @@
 package com.onb.registrationsystem
 
-class Teacher {
-	Name name
-	static embedded = ['name']
+class Name {
 
+	String firstName
+	String lastName
+	
     static constraints = {
-    	firstName nullable:false, blank:false
+	firstName nullable:false, blank:false
 	lastName nullable:false, blank:false
     }
 
-	def toString = {
+	public String toString = {
 		"${lastName}, ${firstName}"
 	}
 }

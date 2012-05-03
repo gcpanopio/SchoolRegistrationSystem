@@ -1,0 +1,20 @@
+<%@ page import="com.onb.registrationsystem.Teacher" %>
+
+
+<fieldset class="embedded"><legend><g:message code="teacher.name.label" default="Name" /></legend>
+<div class="fieldcontain ${hasErrors(bean: teacherInstance, field: 'name.firstName', 'error')} required">
+	<label for="name.firstName">
+		<g:message code="teacher.name.firstName.label" default="First Name" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="firstName" required="" value="${nameInstance?.firstName}"/>
+</div>
+<div class="fieldcontain ${hasErrors(bean: teacherInstance, field: 'name.lastName', 'error')} required">
+	<label for="name.lastName">
+		<g:message code="teacher.name.lastName.label" default="Last Name" />
+		<span class="required-indicator">*</span>
+	</label>
+	<g:textField name="lastName" required="" value="${nameInstance?.lastName}"/>
+</div>
+
+</fieldset>
