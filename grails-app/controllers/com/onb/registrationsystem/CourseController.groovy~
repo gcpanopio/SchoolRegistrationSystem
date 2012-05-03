@@ -20,24 +20,28 @@ class CourseController {
     }
 
     def save() {
-        def courseInstance = new Course(params)
+	println "^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^" + params        
+	def courseInstance = new Course(params)
+
         if (!courseInstance.save(flush: true)) {
             render(view: "create", model: [courseInstance: courseInstance])
             return
         }
-
-		flash.message = message(code: 'default.created.message', args: [message(code: 'course.label', default: 'Course'), courseInstance.id])
+	
+	def course = Course.get(courseInstance.id)
+	println course.subjects
+	flash.message = message(code: 'default.created.message', args: [message(code: 'course.label', default: 'Course'), courseInstance.id])
         redirect(action: "show", id: courseInstance.id)
     }
 
     def show() {
         def courseInstance = Course.get(params.id)
+	println "+++++++++++++" + courseInstance.subjects
         if (!courseInstance) {
 			flash.message = message(code: 'default.not.found.message', args: [message(code: 'course.label', default: 'Course'), params.id])
             redirect(action: "list")
             return
         }
-
         [courseInstance: courseInstance]
     }
 

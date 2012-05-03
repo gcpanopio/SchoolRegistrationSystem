@@ -41,6 +41,28 @@
 				</li>
 				</g:if>
 			
+				<g:if test="${subjectInstance?.classes}">
+				<li class="fieldcontain">
+					<span id="classes-label" class="property-label"><g:message code="subject.classes.label" default="Classes" /></span>
+					
+						<g:each in="${subjectInstance.classes}" var="c">
+						<span class="property-value" aria-labelledby="classes-label"><g:link controller="studentClass" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
+				<g:if test="${subjectInstance?.courses}">
+				<li class="fieldcontain">
+					<span id="courses-label" class="property-label"><g:message code="subject.courses.label" default="Courses" /></span>
+					
+						<g:each in="${subjectInstance.courses}" var="c">
+						<span class="property-value" aria-labelledby="courses-label"><g:link controller="course" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></span>
+						</g:each>
+					
+				</li>
+				</g:if>
+			
 			</ol>
 			<g:form>
 				<fieldset class="buttons">

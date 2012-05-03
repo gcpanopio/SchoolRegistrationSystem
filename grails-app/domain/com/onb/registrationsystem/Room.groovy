@@ -8,5 +8,9 @@ class Room {
 		roomNumber nullable:false, blank:false
 		building nullable:false, blank:false
 	}
+
+	public String toString() {
+		"${building} ${roomNumber}"
+	}
 }
 

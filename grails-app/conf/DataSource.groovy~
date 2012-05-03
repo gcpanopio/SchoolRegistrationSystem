@@ -15,7 +15,7 @@ environments {
         dataSource {
             dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
             url = "jdbc:mysql://localhost/schoolregistration"
-	    driverClassName = "com.mysql.jbdc.Driver"
+	    driverClassName = "com.mysql.jdbc.Driver"
 	    username = 'root'
             password = ''
         }

@@ -12,8 +12,11 @@ class Course {
 	}
 
 	static mapping = {
-		subjects joinTable: false, column : 'Course_ID'
-		lazy : false	
+		subjects joinTable: false, column : 'Course_ID', lazy : false	
+	}
+
+	public void toString() {
+		"${name}"
 	}
 }
 

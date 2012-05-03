@@ -6,13 +6,17 @@ public class StudentClass {
 	Teacher teacher
 	Room room
 	Timeslot timeslot
-	static embedded = ['subject', 'teacher', 'room', 'timeslot' ]
+	static hasOne = ['subject', 'teacher', 'room', 'timeslot' ]
 	
 	static constraints = {
 		subject nullable:false, blank:false
 		teacher nullable:false, blank:false
 		room nullable:false, blank:false
 		timeslot nullable:false, blank:false
+	}
+
+	def toString = {
+		"${subject} - ${teacher}"
 	}
 }
 

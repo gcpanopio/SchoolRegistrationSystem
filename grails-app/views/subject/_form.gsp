@@ -18,3 +18,28 @@
 	<g:field type="number" name="fee" required="" value="${fieldValue(bean: subjectInstance, field: 'fee')}"/>
 </div>
 
+<div class="fieldcontain ${hasErrors(bean: subjectInstance, field: 'classes', 'error')} ">
+	<label for="classes">
+		<g:message code="subject.classes.label" default="Classes" />
+		
+	</label>
+	
+<ul class="one-to-many">
+<g:each in="${subjectInstance?.classes?}" var="c">
+    <li><g:link controller="studentClass" action="show" id="${c.id}">${c?.encodeAsHTML()}</g:link></li>
+</g:each>
+<li class="add">
+<g:link controller="studentClass" action="create" params="['subject.id': subjectInstance?.id]">${message(code: 'default.add.label', args: [message(code: 'studentClass.label', default: 'StudentClass')])}</g:link>
+</li>
+</ul>
+
+</div>
+
+<div class="fieldcontain ${hasErrors(bean: subjectInstance, field: 'courses', 'error')} ">
+	<label for="courses">
+		<g:message code="subject.courses.label" default="Courses" />
+		
+	</label>
+	
+</div>
+

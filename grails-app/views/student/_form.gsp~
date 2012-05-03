@@ -37,6 +37,7 @@
 </label>
 
 
+
 <div class="fieldcontain ${hasErrors(bean: studentInstance, field: 'username', 'error')} required">
 	<label for="username">
 		<g:message code="student.username.label" default="Username" />
