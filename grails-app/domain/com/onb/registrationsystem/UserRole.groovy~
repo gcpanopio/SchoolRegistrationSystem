@@ -16,10 +16,6 @@ class UserRole implements Serializable {
 			other.role?.id == role?.id
 	}
 
-	String toString = {
-		"${user} ${role}"
-	}
-
 	int hashCode() {
 		def builder = new HashCodeBuilder()
 		if (user) builder.append(user.id)

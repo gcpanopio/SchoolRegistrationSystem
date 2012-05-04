@@ -5,7 +5,7 @@ class Enrollment {
 	int schoolYear
 	String semester
 	BigDecimal totalFee
-	static belongsTo = [student : Student]
+	static belongsTo = [user : User]
 	static hasMany = [ classes: StudentClass]
 	
 	static constraints = {
@@ -15,7 +15,7 @@ class Enrollment {
 		classes nullable:true, blank:true
 	}
 
-	public String toString = {
+	public String toString() {
 		"${schoolYear} - ${semester}"
 	}
 }

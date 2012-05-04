@@ -10,7 +10,7 @@ class Name {
 	lastName nullable:false, blank:false
     }
 
-	public String toString = {
+	public String toString() {
 		"${lastName}, ${firstName}"
 	}
 }

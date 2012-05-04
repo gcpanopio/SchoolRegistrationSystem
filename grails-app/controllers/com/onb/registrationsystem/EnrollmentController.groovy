@@ -1,11 +1,11 @@
 package com.onb.registrationsystem
 
 import org.springframework.dao.DataIntegrityViolationException
-
+import java.math.BigDecimal
 class EnrollmentController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
-
+	def springSecurityService
     def index() {
         redirect(action: "list", params: params)
     }
@@ -20,12 +20,18 @@ class EnrollmentController {
     }
 
     def save() {
+	params.totalFee = BigDecimal.ZERO
+	params.user = springSecurityService.currentUser
 	params.enrollmentDate = new Date()
         def enrollmentInstance = new Enrollment(params)
         if (!enrollmentInstance.save(flush: true)) {
             render(view: "create", model: [enrollmentInstance: enrollmentInstance])
             return
         }
+
+	for(c in enrollmentInstance.classes){
+		enrollmentInstance.totalFee = enrollmentInstance.totalFee.add(c.subject.fee)	
+	}
 
 		flash.message = message(code: 'default.created.message', args: [message(code: 'enrollment.label', default: 'Enrollment'), enrollmentInstance.id])
         redirect(action: "show", id: enrollmentInstance.id)

@@ -15,7 +15,7 @@ public class StudentClass {
 		timeslot nullable:false, blank:false
 	}
 
-	def toString = {
+	public String toString(){
 		"${subject} - ${teacher}"
 	}
 }

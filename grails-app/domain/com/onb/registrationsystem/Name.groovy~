@@ -8,8 +8,6 @@ class Name {
     static constraints = {
 	firstName nullable:false, blank:false
 	lastName nullable:false, blank:false
-	id nullable : true
-	version nullable: true
     }
 
 	public String toString = {

@@ -11,10 +11,6 @@ class User {
 	boolean accountLocked
 	boolean passwordExpired
 
-	public String toString = {
-		"${username}"
-	}
-
 	static constraints = {
 		username blank: false, unique: true
 		password blank: false

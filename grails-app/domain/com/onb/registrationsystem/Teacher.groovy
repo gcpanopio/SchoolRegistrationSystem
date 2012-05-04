@@ -7,7 +7,7 @@ class Teacher {
     static constraints = {
     }
 
-	def toString = {
-		"${name}"
+	public String toString(){
+		"${name.lastName}, ${name.firstName}"
 	}
 }

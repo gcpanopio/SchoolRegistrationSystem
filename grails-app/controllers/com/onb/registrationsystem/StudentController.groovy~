@@ -20,6 +20,8 @@ class StudentController {
     }
 
     def save() {
+	params.registrationDate = new Date()
+	params.enrollment = null
         def studentInstance = new Student(params)
 	studentInstance.name = new Name(params)
         if (!studentInstance.save(flush: true)) {

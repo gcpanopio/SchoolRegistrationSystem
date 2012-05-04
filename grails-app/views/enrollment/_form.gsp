@@ -18,14 +18,6 @@
 	<g:textField name="semester" required="" value="${enrollmentInstance?.semester}"/>
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: enrollmentInstance, field: 'totalFee', 'error')} required">
-	<label for="totalFee">
-		<g:message code="enrollment.totalFee.label" default="Total Fee" />
-		<span class="required-indicator">*</span>
-	</label>
-	<g:field type="number" name="totalFee" required="" value="${fieldValue(bean: enrollmentInstance, field: 'totalFee')}"/>
-</div>
-
 <div class="fieldcontain ${hasErrors(bean: enrollmentInstance, field: 'classes', 'error')} ">
 	<label for="classes">
 		<g:message code="enrollment.classes.label" default="Classes" />

@@ -11,7 +11,7 @@ class Timeslot {
 		end nullable:false, blank:false
 	}
 
-	def toString = {
+	public String toString(){
 		"${day} ${start} - ${end}"
 	}
 }

@@ -12,7 +12,7 @@ class Role {
 		authority blank: false, unique: true
 	}
 
-	public String toString(){
+	public String toString = {
 		"${authority}"
 	}
 }

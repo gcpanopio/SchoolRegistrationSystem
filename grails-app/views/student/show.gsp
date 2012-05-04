@@ -87,16 +87,6 @@
 				</li>
 				</g:if>
 			
-				<g:if test="${studentInstance?.enrollment}">
-
-				<li class="fieldcontain">
-					<span id="password-label" class="property-label"><g:message code="student.password.label" default="Password" /></span>
-					
-						<span class="property-value" aria-labelledby="password-label"><g:fieldValue bean="${studentInstance}" field="password"/></span>
-					
-				</li>
-				</g:if>
-			
 				<g:if test="${studentInstance?.accountExpired}">
 				<li class="fieldcontain">
 					<span id="accountExpired-label" class="property-label"><g:message code="student.accountExpired.label" default="Account Expired" /></span>
