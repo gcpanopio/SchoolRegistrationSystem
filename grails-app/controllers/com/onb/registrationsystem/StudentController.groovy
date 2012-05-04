@@ -28,6 +28,7 @@ class StudentController {
             render(view: "create", model: [studentInstance: studentInstance])
             return
         }
+
 	else{
 
 		def role = Role.findByAuthority('ROLE_USER')
@@ -35,7 +36,7 @@ class StudentController {
 		userRole.create (studentInstance, role, true)
 	}
 
-		flash.message = message(code: 'default.created.message', args: [message(code: 'student.label', default: 'Student'), studentInstance.id])
+	flash.message = message(code: 'default.created.message', args: [message(code: 'student.label', default: 'Student'), studentInstance.id])
         redirect(action: "show", id: studentInstance.id)
     }
 
@@ -109,4 +110,19 @@ class StudentController {
             redirect(action: "show", id: params.id)
         }
     }
+
+	def profile() {
+		def studentInstance = Student.get(params.id)
+
+		if (!studentInstance){
+			redirect(action: "navigation")
+		}
+		else{
+       			[studentInstance: studentInstance]
+		}
+	}
+
+	def navigation(){
+
+	}
 }

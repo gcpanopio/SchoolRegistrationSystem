@@ -98,6 +98,7 @@ grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.onb.registra
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.onb.registrationsystem.UserRole'
 grails.plugins.springsecurity.authority.className = 'com.onb.registrationsystem.Role'
 
+grails.plugins.springsecurity.successHandler.defaultTargetUrl = "/welcome/index"
 grails.plugins.springsecurity.securityConfigType = SecurityConfigType.InterceptUrlMap
 grails.plugins.springsecurity.interceptUrlMap = [
 	'/': ['IS_AUTHENTICATED_ANONYMOUSLY'],

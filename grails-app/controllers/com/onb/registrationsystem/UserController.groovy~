@@ -6,8 +6,14 @@ class UserController {
 
     static allowedMethods = [save: "POST", update: "POST", delete: "POST"]
 
-    def index() {
-        redirect(action: "list", params: params)
+    def index() {	
+	def springSecurityService
+        def role = springSecurityService.getPrincipal().getAuthorities()
+		println ">>>>>>>>>>>>>>>>>>> " + role
+		if (role == SpringSecurityUtils.ifAnyGranted('ROLE_ADMIN'))
+			render (view: "/index")
+		else if (role == SpringSecurityUtils.ifAnyGranted('ROLE_USER'))
+				render (view: "/student/profile"))
     }
 
     def list() {
@@ -145,4 +151,4 @@ class UserController {
     }
 }
 
-}
+
