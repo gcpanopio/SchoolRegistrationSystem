@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    
     <string name="hello">Hello World, SnaphMainActivity!</string>
     <string name="app_name">Snaph</string>
     
+    <string name="login_name">Welcome to Snaph</string>
+    <string name="login_button">Login using Facebook</string>
+     <string name="logout_button">Logout</string>
+     
     <string name="form_title">Title</string>
     <string name="form_price">Price</string>
     <string name="form_description">Description</string>
