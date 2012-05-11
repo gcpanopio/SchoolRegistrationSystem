@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/snap_image"
+          android:title="@string/snap_image_button"/>
+    <item android:id="@+id/from_gallery"
+          android:title="@string/from_gallery_button" />
+</menu>
